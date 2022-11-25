@@ -72,7 +72,7 @@ export default {
     ReferendumIndex: 'u32',
     ReferendumInfoTo239: {
       end: 'BlockNumber',
-      proposalHash: 'Hash',
+      proposalHash: 'H256',
       threshold: 'VoteThreshold',
       delay: 'BlockNumber'
     },
@@ -88,7 +88,7 @@ export default {
     },
     ReferendumStatus: {
       end: 'BlockNumber',
-      proposalHash: 'Hash',
+      proposalHash: 'H256',
       threshold: 'VoteThreshold',
       delay: 'BlockNumber',
       tally: 'Tally'

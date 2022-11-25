@@ -41,7 +41,7 @@ export default {
       unlockAt: 'BlockNumber'
     },
     OpenTip: {
-      reason: 'Hash',
+      reason: 'H256',
       who: 'AccountId',
       finder: 'AccountId',
       deposit: 'Balance',
@@ -50,7 +50,7 @@ export default {
       findersFee: 'bool'
     },
     OpenTipTo225: {
-      reason: 'Hash',
+      reason: 'H256',
       who: 'AccountId',
       finder: 'Option<OpenTipFinderTo225>',
       closes: 'Option<BlockNumber>',

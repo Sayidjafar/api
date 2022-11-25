@@ -10,7 +10,7 @@ const BB_V2_TO_V4: DefinitionsCallEntry['methods'] = {
   random_seed: {
     description: 'Generate a random seed.',
     params: [],
-    type: 'Hash'
+    type: 'H256'
   }
 };
 

@@ -33,7 +33,7 @@ const oldTypes = {
     initialHeadData: 'HeadData'
   },
   IncomingParachainFixed: {
-    codeHash: 'Hash',
+    codeHash: 'H256',
     codeSize: 'u32',
     initialHeadData: 'HeadData'
   },

@@ -5,6 +5,7 @@ import type { GenericChainProperties, GenericEvent } from '@polkadot/types';
 import type { Bytes, Compact, Enum, HashMap, Option, Result, Struct, Text, U8aFixed, Vec, bool, i32, u32, u64, u8 } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
 import type { AccountData } from '@polkadot/types/interfaces/balances';
+import type { BlockHash } from '@polkadot/types/interfaces/chain';
 import type { AccountId, BlockNumber, Digest, Hash, Index, Pays, Weight } from '@polkadot/types/interfaces/runtime';
 
 /** @name AccountInfo */
@@ -361,7 +362,7 @@ export interface PeerInfo extends Struct {
   readonly peerId: Text;
   readonly roles: Text;
   readonly protocolVersion: u32;
-  readonly bestHash: Hash;
+  readonly bestHash: BlockHash;
   readonly bestNumber: BlockNumber;
 }
 

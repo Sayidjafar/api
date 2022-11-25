@@ -3,7 +3,7 @@
 
 import type { Enum, Option, Struct, Vec, bool, u32 } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
-import type { AccountId, Balance, BlockNumber, Hash } from '@polkadot/types/interfaces/runtime';
+import type { AccountId, Balance, BlockNumber, H256 } from '@polkadot/types/interfaces/runtime';
 
 /** @name Bounty */
 export interface Bounty extends Struct {
@@ -52,7 +52,7 @@ export interface BountyStatusPendingPayout extends Struct {
 
 /** @name OpenTip */
 export interface OpenTip extends Struct {
-  readonly reason: Hash;
+  readonly reason: H256;
   readonly who: AccountId;
   readonly finder: AccountId;
   readonly deposit: Balance;
@@ -69,7 +69,7 @@ export interface OpenTipTip extends ITuple<[AccountId, Balance]> {}
 
 /** @name OpenTipTo225 */
 export interface OpenTipTo225 extends Struct {
-  readonly reason: Hash;
+  readonly reason: H256;
   readonly who: AccountId;
   readonly finder: Option<OpenTipFinderTo225>;
   readonly closes: Option<BlockNumber>;

@@ -69,8 +69,8 @@ const disputeTypes = {
   ValidDisputeStatementKind: {
     _enum: {
       Explicit: 'Null',
-      BackingSeconded: 'Hash',
-      BackingValid: 'Hash',
+      BackingSeconded: 'H256',
+      BackingValid: 'H256',
       ApprovalChecking: 'Null'
     }
   }
@@ -82,11 +82,11 @@ export default {
   types: objectSpread({}, cumulusTypes, disputeTypes, hrmpTypes, proposeTypes, slotTypes, {
     AbridgedCandidateReceipt: {
       parachainIndex: 'ParaId',
-      relayParent: 'Hash',
+      relayParent: 'BlockHash',
       headData: 'HeadData',
       collator: 'CollatorId',
       signature: 'CollatorSignature',
-      povBlockHash: 'Hash',
+      povBlockHash: 'BlockHash',
       commitments: 'CandidateCommitments'
     },
     AbridgedHostConfiguration: {
@@ -149,11 +149,11 @@ export default {
       paraId: 'ParaId',
       relayParent: 'RelayChainHash',
       collatorId: 'CollatorId',
-      persistedValidationDataHash: 'Hash',
-      povHash: 'Hash',
-      erasureRoot: 'Hash',
+      persistedValidationDataHash: 'H256',
+      povHash: 'H256',
+      erasureRoot: 'H256',
       signature: 'CollatorSignature',
-      paraHead: 'Hash',
+      paraHead: 'BlockHash',
       validationCodeHash: 'ValidationCodeHash'
     },
     CandidateEvent: {
@@ -163,7 +163,7 @@ export default {
         CandidateTimedOut: '(CandidateReceipt, HeadData, CoreIndex)'
       }
     },
-    CandidateHash: 'Hash',
+    CandidateHash: 'H256',
     CandidateInfo: {
       who: 'AccountId',
       deposit: 'Balance'
@@ -180,7 +180,7 @@ export default {
     },
     CandidateReceipt: {
       descriptor: 'CandidateDescriptor',
-      commitmentsHash: 'Hash'
+      commitmentsHash: 'H256'
     },
     GlobalValidationData: {
       maxCodeSize: 'u32',
@@ -360,7 +360,7 @@ export default {
     PersistedValidationData: {
       parentHead: 'HeadData',
       relayParentNumber: 'RelayChainBlockNumber',
-      relayParentStorageRoot: 'Hash',
+      relayParentStorageRoot: 'H256',
       maxPovSize: 'u32'
     },
     PvfCheckStatement: {
@@ -375,7 +375,7 @@ export default {
     },
     RelayBlockNumber: 'u32',
     RelayChainBlockNumber: 'RelayBlockNumber',
-    RelayHash: 'Hash',
+    RelayHash: 'H256',
     RelayChainHash: 'RelayHash',
     Remark: '[u8; 32]',
     ReplacementTimes: {
@@ -436,14 +436,14 @@ export default {
     SignedAvailabilityBitfields: 'Vec<SignedAvailabilityBitfield>',
     SigningContext: {
       sessionIndex: 'SessionIndex',
-      parentHash: 'Hash'
+      parentHash: 'BlockHash'
     },
     Statement: {
       _enum: {
         Never: 'Null', // starts at 1
-        Candidate: 'Hash',
-        Valid: 'Hash',
-        Invalid: 'Hash'
+        Candidate: 'H256',
+        Valid: 'H256',
+        Invalid: 'H256'
       }
     },
     TransientValidationData: {
@@ -466,7 +466,7 @@ export default {
       codeUpgradeAllowed: 'Option<RelayChainBlockNumber>'
     },
     ValidationCode: 'Bytes',
-    ValidationCodeHash: 'Hash',
+    ValidationCodeHash: 'H256',
     ValidationData: {
       persisted: 'PersistedValidationData',
       transient: 'TransientValidationData'

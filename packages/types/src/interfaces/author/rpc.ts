@@ -91,6 +91,6 @@ export const rpc: DefinitionsRpc = {
         type: 'Extrinsic'
       }
     ],
-    type: 'Hash'
+    type: 'H256'
   }
 };

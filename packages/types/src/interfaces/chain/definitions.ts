@@ -11,6 +11,6 @@ import { rpc } from './rpc';
 export default {
   rpc,
   types: {
-    BlockHash: 'Hash'
+    BlockHash: 'H256'
   }
 } as Definitions;

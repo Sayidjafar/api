@@ -17,7 +17,7 @@ export default {
     },
     Offender: 'IdentificationTuple',
     OpaqueTimeSlot: 'Bytes',
-    ReportIdOf: 'Hash',
+    ReportIdOf: 'H256',
     Reporter: 'AccountId'
   }
 } as Definitions;

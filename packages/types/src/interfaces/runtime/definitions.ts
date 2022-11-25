@@ -66,7 +66,7 @@ export default {
     BlockNumberFor: 'BlockNumber',
     BlockNumberOf: 'BlockNumber',
     Call: 'GenericCall',
-    CallHash: 'Hash',
+    CallHash: 'H256',
     CallHashOf: 'CallHash',
     ChangesTrieConfiguration: {
       digestInterval: 'u32',
@@ -78,7 +78,7 @@ export default {
       }
     },
     ConsensusEngineId: 'GenericConsensusEngineId',
-    CodecHash: 'Hash',
+    CodecHash: 'H256',
     CrateVersion: {
       major: 'u16',
       minor: 'u8',
@@ -91,7 +91,7 @@ export default {
       _enum: {
         Other: 'Bytes', // 0
         AuthoritiesChange: 'Vec<AuthorityId>', // 1
-        ChangesTrieRoot: 'Hash', // 2
+        ChangesTrieRoot: 'H256', // 2
         SealV0: 'SealV0', // 3
         Consensus: 'Consensus', // 4
         Seal: 'Seal', // 5
@@ -114,14 +114,14 @@ export default {
     H2048: '[u8; 256; H2048]',
     Hash: 'H256',
     Header: {
-      parentHash: 'Hash',
+      parentHash: 'BlockHash',
       number: 'Compact<BlockNumber>',
-      stateRoot: 'Hash',
-      extrinsicsRoot: 'Hash',
+      stateRoot: 'H256',
+      extrinsicsRoot: 'H256',
       digest: 'Digest'
     },
     HeaderPartial: {
-      parentHash: 'Hash',
+      parentHash: 'BlockHash',
       // since we only parse JSON with this, having non-compact works
       number: 'BlockNumber'
     },

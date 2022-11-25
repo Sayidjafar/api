@@ -4,7 +4,7 @@
 import type { Bytes, Enum, Option, Struct, U8aFixed, Vec, bool, u32, u64 } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
 import type { AuthorityId } from '@polkadot/types/interfaces/consensus';
-import type { Hash, Header, Slot } from '@polkadot/types/interfaces/runtime';
+import type { Header, Slot } from '@polkadot/types/interfaces/runtime';
 
 /** @name AllowedSlots */
 export interface AllowedSlots extends Enum {
@@ -63,7 +63,7 @@ export interface Epoch extends Struct {
   readonly startSlot: Slot;
   readonly duration: u64;
   readonly authorities: Vec<ITuple<[AuthorityId, BabeAuthorityWeight]>>;
-  readonly randomness: Hash;
+  readonly randomness: U8aFixed;
   readonly config: BabeEpochConfiguration;
 }
 
@@ -98,7 +98,7 @@ export interface NextConfigDescriptorV1 extends Struct {
 export interface OpaqueKeyOwnershipProof extends Bytes {}
 
 /** @name Randomness */
-export interface Randomness extends Hash {}
+export interface Randomness extends U8aFixed {}
 
 /** @name RawBabePreDigest */
 export interface RawBabePreDigest extends Enum {

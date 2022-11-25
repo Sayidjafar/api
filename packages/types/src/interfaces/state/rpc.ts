@@ -127,7 +127,7 @@ export const rpc: DefinitionsRpc = {
         type: 'BlockHash'
       }
     ],
-    type: 'Hash'
+    type: 'H256'
   },
   getChildStorageSize: {
     description: 'Retrieves the child storage size',
@@ -290,7 +290,7 @@ export const rpc: DefinitionsRpc = {
         type: 'BlockHash'
       }
     ],
-    type: 'Hash'
+    type: 'H256'
   },
   getStorageSize: {
     alias: ['state_getStorageSizeAt'],
@@ -318,7 +318,7 @@ export const rpc: DefinitionsRpc = {
       },
       {
         name: 'fromBlock',
-        type: 'Hash'
+        type: 'BlockHash'
       },
       {
         isOptional: true,
@@ -376,7 +376,7 @@ export const rpc: DefinitionsRpc = {
     params: [
       {
         name: 'block',
-        type: 'Hash'
+        type: 'BlockHash'
       },
       {
         name: 'targets',

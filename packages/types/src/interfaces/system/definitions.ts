@@ -243,7 +243,7 @@ export default {
       peerId: 'Text',
       roles: 'Text',
       protocolVersion: 'u32',
-      bestHash: 'Hash',
+      bestHash: 'BlockHash',
       bestNumber: 'BlockNumber'
     },
     PerDispatchClassU32: {

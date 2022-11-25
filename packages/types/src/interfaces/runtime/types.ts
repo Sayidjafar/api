@@ -4,6 +4,7 @@
 import type { GenericAccountId32, GenericAccountId33, GenericAccountIndex, GenericBlock, GenericCall, GenericConsensusEngineId, GenericEthereumAccountId, GenericLookupSource, GenericMultiAddress, StorageKey } from '@polkadot/types';
 import type { Bytes, Compact, DoNotConstruct, Enum, Int, Null, Option, Struct, U8aFixed, UInt, Vec, u16, u32, u64, u8 } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
+import type { BlockHash } from '@polkadot/types/interfaces/chain';
 import type { AuthorityId } from '@polkadot/types/interfaces/consensus';
 import type { Signature } from '@polkadot/types/interfaces/extrinsics';
 import type { SystemOrigin } from '@polkadot/types/interfaces/system';
@@ -54,7 +55,7 @@ export interface BlockNumberOf extends BlockNumber {}
 export interface Call extends GenericCall {}
 
 /** @name CallHash */
-export interface CallHash extends Hash {}
+export interface CallHash extends H256 {}
 
 /** @name CallHashOf */
 export interface CallHashOf extends CallHash {}
@@ -73,7 +74,7 @@ export interface ChangesTrieSignal extends Enum {
 }
 
 /** @name CodecHash */
-export interface CodecHash extends Hash {}
+export interface CodecHash extends H256 {}
 
 /** @name Consensus */
 export interface Consensus extends ITuple<[ConsensusEngineId, Bytes]> {}
@@ -100,7 +101,7 @@ export interface DigestItem extends Enum {
   readonly isAuthoritiesChange: boolean;
   readonly asAuthoritiesChange: Vec<AuthorityId>;
   readonly isChangesTrieRoot: boolean;
-  readonly asChangesTrieRoot: Hash;
+  readonly asChangesTrieRoot: H256;
   readonly isSealV0: boolean;
   readonly asSealV0: SealV0;
   readonly isConsensus: boolean;
@@ -171,16 +172,16 @@ export interface Hash extends H256 {}
 
 /** @name Header */
 export interface Header extends Struct {
-  readonly parentHash: Hash;
+  readonly parentHash: BlockHash;
   readonly number: Compact<BlockNumber>;
-  readonly stateRoot: Hash;
-  readonly extrinsicsRoot: Hash;
+  readonly stateRoot: H256;
+  readonly extrinsicsRoot: H256;
   readonly digest: Digest;
 }
 
 /** @name HeaderPartial */
 export interface HeaderPartial extends Struct {
-  readonly parentHash: Hash;
+  readonly parentHash: BlockHash;
   readonly number: BlockNumber;
 }
 

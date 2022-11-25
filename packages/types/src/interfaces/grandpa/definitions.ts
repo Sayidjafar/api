@@ -62,7 +62,7 @@ export default {
       second: '(GrandpaPrevote, AuthoritySignature)'
     },
     GrandpaPrevote: {
-      targetHash: 'Hash',
+      targetHash: 'BlockHash',
       targetNumber: 'BlockNumber'
     },
     GrandpaCommit: {

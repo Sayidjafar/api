@@ -15,7 +15,7 @@ const PH_V1_TO_V2: DefinitionsCallEntry['methods'] = {
       },
       {
         name: 'hash',
-        type: 'Hash'
+        type: 'H256'
       }
     ],
     type: 'Option<(PersistedValidationData, ValidationCodeHash)>'

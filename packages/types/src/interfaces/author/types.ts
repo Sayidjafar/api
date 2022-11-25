@@ -2,12 +2,13 @@
 /* eslint-disable */
 
 import type { Bytes, Enum, Text, Vec } from '@polkadot/types-codec';
-import type { Hash } from '@polkadot/types/interfaces/runtime';
+import type { BlockHash } from '@polkadot/types/interfaces/chain';
+import type { H256 } from '@polkadot/types/interfaces/runtime';
 
 /** @name ExtrinsicOrHash */
 export interface ExtrinsicOrHash extends Enum {
   readonly isHash: boolean;
-  readonly asHash: Hash;
+  readonly asHash: H256;
   readonly isExtrinsic: boolean;
   readonly asExtrinsic: Bytes;
   readonly type: 'Hash' | 'Extrinsic';
@@ -20,15 +21,15 @@ export interface ExtrinsicStatus extends Enum {
   readonly isBroadcast: boolean;
   readonly asBroadcast: Vec<Text>;
   readonly isInBlock: boolean;
-  readonly asInBlock: Hash;
+  readonly asInBlock: BlockHash;
   readonly isRetracted: boolean;
-  readonly asRetracted: Hash;
+  readonly asRetracted: BlockHash;
   readonly isFinalityTimeout: boolean;
-  readonly asFinalityTimeout: Hash;
+  readonly asFinalityTimeout: BlockHash;
   readonly isFinalized: boolean;
-  readonly asFinalized: Hash;
+  readonly asFinalized: BlockHash;
   readonly isUsurped: boolean;
-  readonly asUsurped: Hash;
+  readonly asUsurped: BlockHash;
   readonly isDropped: boolean;
   readonly isInvalid: boolean;
   readonly type: 'Future' | 'Ready' | 'Broadcast' | 'InBlock' | 'Retracted' | 'FinalityTimeout' | 'Finalized' | 'Usurped' | 'Dropped' | 'Invalid';

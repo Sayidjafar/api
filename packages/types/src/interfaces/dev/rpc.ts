@@ -10,7 +10,7 @@ export const rpc: DefinitionsRpc = {
       {
         isHistoric: true,
         name: 'at',
-        type: 'Hash'
+        type: 'BlockHash'
       }
     ],
     type: 'Option<BlockStats>'

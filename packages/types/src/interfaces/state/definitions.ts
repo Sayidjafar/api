@@ -41,7 +41,7 @@ export default {
       childRemainingToMigrate: 'u64'
     },
     ReadProof: {
-      at: 'Hash',
+      at: 'BlockHash',
       proof: 'Vec<Bytes>'
     },
     RuntimeVersionApi: '(ApiId, u32)',
@@ -79,7 +79,7 @@ export default {
     },
     SpecVersion: 'u32',
     StorageChangeSet: {
-      block: 'Hash',
+      block: 'BlockHash',
       changes: 'Vec<KeyValueOption>'
     },
     TraceBlockResponse: {

@@ -24,11 +24,11 @@ export default {
       lastWrite: 'Option<BlockNumber>',
       _reserved: 'Option<Null>'
     },
-    CodeHash: 'Hash',
+    CodeHash: 'H256',
     CodeSource: {
       _enum: {
         Upload: 'Bytes',
-        Existing: 'Hash'
+        Existing: 'H256'
       }
     },
     CodeUploadRequest: {
@@ -421,14 +421,14 @@ export default {
       instructionWeights: 'InstructionWeights',
       hostFnWeights: 'HostFnWeights'
     },
-    SeedOf: 'Hash',
+    SeedOf: 'H256',
     StorageDeposit: {
       _enum: {
         Refund: 'Balance',
         Charge: 'Balance'
       }
     },
-    TombstoneContractInfo: 'Hash',
+    TombstoneContractInfo: 'H256',
     TrieId: 'Bytes'
   }
 } as Definitions;

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## master
+
+Changes:
+
+- Cleanup interface usages for `Hash` and `BlockHash` types
+
+
 ## 9.9.1 Nov 20, 2022
 
 Changes:

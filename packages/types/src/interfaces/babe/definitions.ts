@@ -52,7 +52,7 @@ export default {
       startSlot: 'Slot',
       duration: 'u64',
       authorities: 'Vec<(AuthorityId, BabeAuthorityWeight)>',
-      randomness: 'Hash', // [u8; VRF_OUTPUT_LENGTH],
+      randomness: '[u8; 32]', // [u8; VRF_OUTPUT_LENGTH],
       config: 'BabeEpochConfiguration'
     },
     EpochAuthorship: {
@@ -71,7 +71,7 @@ export default {
       allowedSlots: 'AllowedSlots'
     },
     OpaqueKeyOwnershipProof: 'Bytes',
-    Randomness: 'Hash', // [u8; RANDOMNESS_LENGTH],
+    Randomness: '[u8; 32]', // [u8; RANDOMNESS_LENGTH],
     RawBabePreDigest: {
       _enum: {
         Phantom: 'Null', // index starts at 1... empty slot at 0

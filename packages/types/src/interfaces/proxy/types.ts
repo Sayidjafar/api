@@ -2,12 +2,12 @@
 /* eslint-disable */
 
 import type { Enum, Struct } from '@polkadot/types-codec';
-import type { AccountId, BlockNumber, Hash } from '@polkadot/types/interfaces/runtime';
+import type { AccountId, BlockNumber, H256 } from '@polkadot/types/interfaces/runtime';
 
 /** @name ProxyAnnouncement */
 export interface ProxyAnnouncement extends Struct {
   readonly real: AccountId;
-  readonly callHash: Hash;
+  readonly callHash: H256;
   readonly height: BlockNumber;
 }
 

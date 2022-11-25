@@ -13,7 +13,7 @@ export default {
   types: {
     ExtrinsicOrHash: {
       _enum: {
-        Hash: 'Hash',
+        Hash: 'H256',
         Extrinsic: 'Bytes'
       }
     },
@@ -22,11 +22,11 @@ export default {
         Future: 'Null',
         Ready: 'Null',
         Broadcast: 'Vec<Text>',
-        InBlock: 'Hash',
-        Retracted: 'Hash',
-        FinalityTimeout: 'Hash',
-        Finalized: 'Hash',
-        Usurped: 'Hash',
+        InBlock: 'BlockHash',
+        Retracted: 'BlockHash',
+        FinalityTimeout: 'BlockHash',
+        Finalized: 'BlockHash',
+        Usurped: 'BlockHash',
         Dropped: 'Null',
         Invalid: 'Null'
       }

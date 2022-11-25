@@ -19,7 +19,7 @@ export default {
     },
     ProxyAnnouncement: {
       real: 'AccountId',
-      callHash: 'Hash',
+      callHash: 'H256',
       height: 'BlockNumber'
     }
   }

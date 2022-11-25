@@ -19,7 +19,7 @@ export const rpc: DefinitionsRpc = {
         isHistoric: true,
         isOptional: true,
         name: 'at',
-        type: 'Hash'
+        type: 'BlockHash'
       }
     ],
     type: 'Vec<StorageKey>'
@@ -49,7 +49,7 @@ export const rpc: DefinitionsRpc = {
         isHistoric: true,
         isOptional: true,
         name: 'at',
-        type: 'Hash'
+        type: 'BlockHash'
       }
     ],
     type: 'Vec<StorageKey>'
@@ -69,7 +69,7 @@ export const rpc: DefinitionsRpc = {
         isHistoric: true,
         isOptional: true,
         name: 'at',
-        type: 'Hash'
+        type: 'BlockHash'
       }
     ],
     type: 'Option<StorageData>'
@@ -89,7 +89,7 @@ export const rpc: DefinitionsRpc = {
         isHistoric: true,
         isOptional: true,
         name: 'at',
-        type: 'Hash'
+        type: 'BlockHash'
       }
     ],
     type: 'Vec<Option<StorageData>>'
@@ -109,7 +109,7 @@ export const rpc: DefinitionsRpc = {
         isHistoric: true,
         isOptional: true,
         name: 'at',
-        type: 'Hash'
+        type: 'BlockHash'
       }
     ],
     type: 'Option<Hash>'
@@ -129,7 +129,7 @@ export const rpc: DefinitionsRpc = {
         isHistoric: true,
         isOptional: true,
         name: 'at',
-        type: 'Hash'
+        type: 'BlockHash'
       }
     ],
     type: 'Option<u64>'

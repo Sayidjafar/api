@@ -3,6 +3,7 @@
 
 import type { BTreeMap, BitVec, Bytes, Enum, Option, Struct, U8aFixed, Vec, bool, u32 } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
+import type { BlockHash } from '@polkadot/types/interfaces/chain';
 import type { Signature } from '@polkadot/types/interfaces/extrinsics';
 import type { AccountId, Balance, BalanceOf, BlockNumber, H256, Hash, Header, StorageProof, ValidatorId, Weight } from '@polkadot/types/interfaces/runtime';
 import type { MembershipProof, SessionIndex } from '@polkadot/types/interfaces/session';
@@ -11,11 +12,11 @@ import type { ValidatorIndex } from '@polkadot/types/interfaces/staking';
 /** @name AbridgedCandidateReceipt */
 export interface AbridgedCandidateReceipt extends Struct {
   readonly parachainIndex: ParaId;
-  readonly relayParent: Hash;
+  readonly relayParent: BlockHash;
   readonly headData: HeadData;
   readonly collator: CollatorId;
   readonly signature: CollatorSignature;
-  readonly povBlockHash: Hash;
+  readonly povBlockHash: BlockHash;
   readonly commitments: CandidateCommitments;
 }
 
@@ -114,11 +115,11 @@ export interface CandidateDescriptor extends Struct {
   readonly paraId: ParaId;
   readonly relayParent: RelayChainHash;
   readonly collatorId: CollatorId;
-  readonly persistedValidationDataHash: Hash;
-  readonly povHash: Hash;
-  readonly erasureRoot: Hash;
+  readonly persistedValidationDataHash: H256;
+  readonly povHash: H256;
+  readonly erasureRoot: H256;
   readonly signature: CollatorSignature;
-  readonly paraHead: Hash;
+  readonly paraHead: BlockHash;
   readonly validationCodeHash: ValidationCodeHash;
 }
 
@@ -134,7 +135,7 @@ export interface CandidateEvent extends Enum {
 }
 
 /** @name CandidateHash */
-export interface CandidateHash extends Hash {}
+export interface CandidateHash extends H256 {}
 
 /** @name CandidateInfo */
 export interface CandidateInfo extends Struct {
@@ -157,7 +158,7 @@ export interface CandidatePendingAvailability extends Struct {
 /** @name CandidateReceipt */
 export interface CandidateReceipt extends Struct {
   readonly descriptor: CandidateDescriptor;
-  readonly commitmentsHash: Hash;
+  readonly commitmentsHash: H256;
 }
 
 /** @name CollatorId */
@@ -391,7 +392,7 @@ export interface IncomingParachainDeploy extends Struct {
 
 /** @name IncomingParachainFixed */
 export interface IncomingParachainFixed extends Struct {
-  readonly codeHash: Hash;
+  readonly codeHash: H256;
   readonly codeSize: u32;
   readonly initialHeadData: HeadData;
 }
@@ -579,7 +580,7 @@ export interface ParaValidatorIndex extends u32 {}
 export interface PersistedValidationData extends Struct {
   readonly parentHead: HeadData;
   readonly relayParentNumber: RelayChainBlockNumber;
-  readonly relayParentStorageRoot: Hash;
+  readonly relayParentStorageRoot: H256;
   readonly maxPovSize: u32;
 }
 
@@ -613,7 +614,7 @@ export interface RelayChainBlockNumber extends RelayBlockNumber {}
 export interface RelayChainHash extends RelayHash {}
 
 /** @name RelayHash */
-export interface RelayHash extends Hash {}
+export interface RelayHash extends H256 {}
 
 /** @name Remark */
 export interface Remark extends U8aFixed {}
@@ -692,7 +693,7 @@ export interface SignedAvailabilityBitfields extends Vec<SignedAvailabilityBitfi
 /** @name SigningContext */
 export interface SigningContext extends Struct {
   readonly sessionIndex: SessionIndex;
-  readonly parentHash: Hash;
+  readonly parentHash: BlockHash;
 }
 
 /** @name SlotRange */
@@ -755,11 +756,11 @@ export interface SlotRange10 extends Enum {
 export interface Statement extends Enum {
   readonly isNever: boolean;
   readonly isCandidate: boolean;
-  readonly asCandidate: Hash;
+  readonly asCandidate: H256;
   readonly isValid: boolean;
-  readonly asValid: Hash;
+  readonly asValid: H256;
   readonly isInvalid: boolean;
-  readonly asInvalid: Hash;
+  readonly asInvalid: H256;
   readonly type: 'Never' | 'Candidate' | 'Valid' | 'Invalid';
 }
 
@@ -798,7 +799,7 @@ export interface UpwardMessage extends Bytes {}
 export interface ValidationCode extends Bytes {}
 
 /** @name ValidationCodeHash */
-export interface ValidationCodeHash extends Hash {}
+export interface ValidationCodeHash extends H256 {}
 
 /** @name ValidationData */
 export interface ValidationData extends Struct {
@@ -826,9 +827,9 @@ export interface ValidatorSignature extends Signature {}
 export interface ValidDisputeStatementKind extends Enum {
   readonly isExplicit: boolean;
   readonly isBackingSeconded: boolean;
-  readonly asBackingSeconded: Hash;
+  readonly asBackingSeconded: H256;
   readonly isBackingValid: boolean;
-  readonly asBackingValid: Hash;
+  readonly asBackingValid: H256;
   readonly isApprovalChecking: boolean;
   readonly type: 'Explicit' | 'BackingSeconded' | 'BackingValid' | 'ApprovalChecking';
 }

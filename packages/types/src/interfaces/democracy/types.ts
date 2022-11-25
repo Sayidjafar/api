@@ -4,7 +4,7 @@
 import type { Bytes, Enum, Option, Struct, Vec, bool, u32 } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
 import type { Vote, VoteThreshold } from '@polkadot/types/interfaces/elections';
-import type { AccountId, Balance, BlockNumber, Call, Hash } from '@polkadot/types/interfaces/runtime';
+import type { AccountId, Balance, BlockNumber, Call, H256 } from '@polkadot/types/interfaces/runtime';
 
 /** @name AccountVote */
 export interface AccountVote extends Enum {
@@ -102,7 +102,7 @@ export interface ReferendumInfoFinished extends Struct {
 /** @name ReferendumInfoTo239 */
 export interface ReferendumInfoTo239 extends Struct {
   readonly end: BlockNumber;
-  readonly proposalHash: Hash;
+  readonly proposalHash: H256;
   readonly threshold: VoteThreshold;
   readonly delay: BlockNumber;
 }
@@ -110,7 +110,7 @@ export interface ReferendumInfoTo239 extends Struct {
 /** @name ReferendumStatus */
 export interface ReferendumStatus extends Struct {
   readonly end: BlockNumber;
-  readonly proposalHash: Hash;
+  readonly proposalHash: H256;
   readonly threshold: VoteThreshold;
   readonly delay: BlockNumber;
   readonly tally: Tally;

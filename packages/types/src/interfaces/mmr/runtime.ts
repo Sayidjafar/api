@@ -51,7 +51,7 @@ export const runtime: DefinitionsCall = {
           params: [
             {
               name: 'root',
-              type: 'Hash'
+              type: 'H256'
             },
             {
               name: 'leaves',
@@ -83,7 +83,7 @@ export const runtime: DefinitionsCall = {
           params: [
             {
               name: 'root',
-              type: 'Hash'
+              type: 'H256'
             },
             {
               name: 'leaf',

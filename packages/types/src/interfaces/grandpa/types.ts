@@ -6,7 +6,7 @@ import type { ITuple } from '@polkadot/types-codec/types';
 import type { BlockHash } from '@polkadot/types/interfaces/chain';
 import type { AuthorityId } from '@polkadot/types/interfaces/consensus';
 import type { AuthoritySignature } from '@polkadot/types/interfaces/imOnline';
-import type { BlockNumber, Hash, Header } from '@polkadot/types/interfaces/runtime';
+import type { BlockNumber, Header } from '@polkadot/types/interfaces/runtime';
 import type { MembershipProof } from '@polkadot/types/interfaces/session';
 
 /** @name AuthorityIndex */
@@ -108,7 +108,7 @@ export interface GrandpaPrecommit extends Struct {
 
 /** @name GrandpaPrevote */
 export interface GrandpaPrevote extends Struct {
-  readonly targetHash: Hash;
+  readonly targetHash: BlockHash;
   readonly targetNumber: BlockNumber;
 }
 

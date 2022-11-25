@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 import type { Bytes, Compact, Enum, Null, Option, Raw, Result, Set, Struct, Text, U8aFixed, bool, u32, u64, u8 } from '@polkadot/types-codec';
-import type { AccountId, Balance, BlockNumber, Hash, Weight, WeightV2 } from '@polkadot/types/interfaces/runtime';
+import type { AccountId, Balance, BlockNumber, H256, Weight, WeightV2 } from '@polkadot/types/interfaces/runtime';
 import type { DispatchError } from '@polkadot/types/interfaces/system';
 
 /** @name AliveContractInfo */
@@ -19,14 +19,14 @@ export interface AliveContractInfo extends Struct {
 }
 
 /** @name CodeHash */
-export interface CodeHash extends Hash {}
+export interface CodeHash extends H256 {}
 
 /** @name CodeSource */
 export interface CodeSource extends Enum {
   readonly isUpload: boolean;
   readonly asUpload: Bytes;
   readonly isExisting: boolean;
-  readonly asExisting: Hash;
+  readonly asExisting: H256;
   readonly type: 'Upload' | 'Existing';
 }
 
@@ -516,7 +516,7 @@ export interface ScheduleTo264 extends Struct {
 }
 
 /** @name SeedOf */
-export interface SeedOf extends Hash {}
+export interface SeedOf extends H256 {}
 
 /** @name StorageDeposit */
 export interface StorageDeposit extends Enum {
@@ -528,7 +528,7 @@ export interface StorageDeposit extends Enum {
 }
 
 /** @name TombstoneContractInfo */
-export interface TombstoneContractInfo extends Hash {}
+export interface TombstoneContractInfo extends H256 {}
 
 /** @name TrieId */
 export interface TrieId extends Bytes {}

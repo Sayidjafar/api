@@ -4,7 +4,8 @@
 import type { StorageKey } from '@polkadot/types';
 import type { Bytes, Enum, HashMap, Option, Struct, Text, U8aFixed, Vec, bool, u32, u64, u8 } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
-import type { Hash, StorageData } from '@polkadot/types/interfaces/runtime';
+import type { BlockHash } from '@polkadot/types/interfaces/chain';
+import type { StorageData } from '@polkadot/types/interfaces/runtime';
 
 /** @name ApiId */
 export interface ApiId extends U8aFixed {}
@@ -51,7 +52,7 @@ export interface MigrationStatusResult extends Struct {
 
 /** @name ReadProof */
 export interface ReadProof extends Struct {
-  readonly at: Hash;
+  readonly at: BlockHash;
   readonly proof: Vec<Bytes>;
 }
 
@@ -103,7 +104,7 @@ export interface SpecVersion extends u32 {}
 
 /** @name StorageChangeSet */
 export interface StorageChangeSet extends Struct {
-  readonly block: Hash;
+  readonly block: BlockHash;
   readonly changes: Vec<KeyValueOption>;
 }
 
